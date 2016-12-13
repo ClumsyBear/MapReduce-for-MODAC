@@ -14,5 +14,7 @@ hdfs dfs -ls
 yarn jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar -Dmapreduce.job.queuename=default -input input -output output -mapper map.py -reducer red.py -file map.py -file red.py -numReduceTasks 1 -partitioner org.apache.hadoop.mapred.lib.KeyFieldBasedPartitioner
 
 # receive output to local directory and delete fild on hdfs
+```
 hdfs dfs -get output output
 hdfs dfs -rm -r -skipTrash output
+```
