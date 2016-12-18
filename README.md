@@ -14,7 +14,7 @@ hdfs dfs -copyFromLocal input input
 hdfs dfs -ls
 ```
 
-Run map reduce job, with 1 reducer (in this way we can get a combined estimate)
+Run map reduce job, with only one reducer (in this way we can get a combined estimate). Note '\' in a command indicate that it is actually one long command, but it is broken up simply for the sake of readability.
 ```
 yarn jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar -Dmapreduce.job.queuename=default \
    -input input -output output -mapper map.py -reducer red.py -file map.py -file red.py \
